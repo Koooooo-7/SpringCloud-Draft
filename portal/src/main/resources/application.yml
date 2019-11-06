@@ -1,0 +1,14 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: portal
+eureka:
+  client:
+    serviceUrl:
+      # 注册中心地址
+      defaultZone:  http://localhost:9996/eureka/
+  instance:
+    statusPageUrl: ${spring.application.name}:${server.port}
+
+

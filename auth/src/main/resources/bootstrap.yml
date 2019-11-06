@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      #统一配置中心网址
+      uri:  http://localhost:10001/
+      #本服务名
+      name: auth
+      #环境env配置
+      profile: dev

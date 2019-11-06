@@ -1,0 +1,24 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: config
+#  cloud:
+#    config:
+#      server:
+#        bootstrap: true
+
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:config/ # 搜索src/main/resource/config
+  profiles:
+    active: native  # 配置使用本地储存
+eureka:
+  client:
+    serviceUrl:
+      # 注册中心地址
+      defaultZone:  http://localhost:9996/eureka/
+  instance:
+    statusPageUrl: ${spring.application.name}:${server.port}
